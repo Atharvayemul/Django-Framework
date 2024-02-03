@@ -9,8 +9,7 @@ def calculate ():
     return x
 
 def say_hello(request):
-    x = 1
-    y = 2
+    x = calculate()
     return render(request,'hello.html',{'name':'Atharva'})
 
 
