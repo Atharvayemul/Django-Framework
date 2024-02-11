@@ -20,7 +20,11 @@ def say_hello(request):
 
     # query_set = Product.objects.values('id','title','collection__title')
     
-    query_set = Product.objects.filter(id__in= OrderItem.objects.values('product_id').distinct()).order_by('title')
+    # query_set = Product.objects.filter(id__in= OrderItem.objects.values('product_id').distinct()).order_by('title')
+    
+    # query_set = Product.objects.only('id','title')
+    
+    query_set = Product.objects.defer('description')
     
     
     
